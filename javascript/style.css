@@ -1,0 +1,25 @@
+div {
+	width: 100px;
+	height: 100px;
+	background-color: #eeeecc;
+	/*display: inline-block;*/
+	margin-left: 1px;
+}
+#div2 {
+	transition-property: background-color, border-radius;
+	transition-duration: 0.2s;
+}
+
+#container div {
+	float: left;
+}
+#container {
+	width: 300px;
+	height: 300px;
+}
+.child {
+	background-color: green;
+	width: 10%;
+	height: 10%;
+
+}

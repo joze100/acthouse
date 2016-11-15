@@ -1,0 +1,87 @@
+div {
+	width: 100px;
+	height: 100px;
+	background-color: rgba(255,0,0,0.3);
+	float: left;
+}
+.radius1 {
+	border-radius: 10px;
+}
+.radius2 {
+	border-radius: 50px 0 0 50px;
+}
+.radius3 {
+	border-radius: 0 50px 50px 0;
+	background-color: #f00;
+	/*width: 200px;*/
+}
+.radius4 {
+	border-radius: 10px 20px 30px 40px;
+}
+.radius5 {
+	border-radius: 30px 0 0 30px;
+}
+.radius6 {
+	border-radius: 0 30px 30px 0;
+	background-color: red;
+}
+.radius7 {
+	border-radius: 10px 20px 30px 40px / 40px 30px 20px 10px;
+}
+.radius8 {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 30px;
+}
+.radius9 {
+	border-radius: 50px 50px 0 0;
+	background-color: red;
+	height: 50px;
+	border: 1px solid #000;
+}
+.radius10 {
+	border-radius: 0 0 50px 50px;
+	background-color: #fff;
+	height: 50px;
+	border: 1px solid #000;
+}
+.monsterball {
+	position: relative;
+	box-sizing: border-box;
+}
+.monsterball .up {
+	border-radius: 50px 50px 0 0;
+	height: 50%;
+	background-color: red;
+	border: 1px solid black;
+}
+.monsterball .down {
+	border-radius: 0 0 50px 50px;
+	height: 50%;
+	background-color: white;
+	border: 1px solid black;
+}
+.monsterball .inside {
+	border-radius: 50%;
+	background-color: white;
+	height: 30%;
+	width: 30%;
+	border: 3px solid black;
+	position: absolute;
+	top: 35%;
+	left:33%;
+}
+
+#box-shadow {
+	clear: both;
+	width: 50%;
+	background-color: lightgreen;
+	box-shadow: 10px 10px 10px 10px gray inset;
+	margin-bottom: 24px;
+}
+h1#title {
+	color: aqua;
+	font-size: 2em;
+	text-shadow: 5px 5px 5px #000;
+}

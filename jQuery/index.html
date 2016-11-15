@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="traverse2">
+		<ul>
+			<li>太郎</li>
+			<li>次郎</li>
+			<li class="saburo">三郎
+				<ul>
+					<li>三郎の長男
+						<ul>
+							<li>三郎の孫A</li>
+							<li class="mago">三郎の孫B</li>
+						</ul>
+					</li>
+					<li>三郎の次男</li>
+				</ul>
+			</li>
+			<li>四郎</li>
+			<li>五郎</li>
+		</ul>
+		<button type="button" id="prev">prev</button>
+		<button type="button" id="prevAll">prevAll</button>
+		<button type="button" id="next">next</button>
+		<button type="button" id="nextAll">nextAll</button>
+		<button type="button" id="parent">parent</button>
+		<button type="button" id="parents">parents</button>
+		<button type="button" id="children">children</button>
+		<button type="button" id="siblings">siblings</button>
+		<button type="button" id="closest">clasest</button>
+		<button type="button" id="find">孫</button>
+		<button type="button" id="mago">孫から見た三郎の次男</button>
+		<style>
+			.blue_border { border: 1px solid blue; }
+		</style>			
+	</div>
+	<div id="traverse1">
+		<ul>
+			<li class="first">太郎</li>
+			<li>次郎</li>
+			<li class="third">三郎</li>
+			<li>四郎</li>
+			<li>五郎</li>
+		</ul>
+		<button type="button" id="first">最初の要素</button>
+		<button type="button" id="last">最後の要素</button>
+		<button type="button" id="eq">n番目の要素</button>
+	</div>
+	<div id="remove">
+		<ul>
+			<li class="first">太郎</li>
+			<li>次郎</li>
+			<li>三郎</li>		
+		</ul>
+		<button type="button" id="remove-elem">削除</button>
+		<button type="button" id="restore-elem">復活</button>
+		<button type="button" id="empty-elem">クリア</button>
+		<button type="button" id="clone-elem">コピー</button>
+	</div>
+	<div>
+		<div id="append">
+			<ul>
+				<li>次郎</li>
+				<li>三郎</li>
+			</ul>
+			<button type="button" id="append-elem">要素追加（最後）</button>
+			<button type="button" id="prepend-elem">要素追加（先頭）</button>
+			<button type="button" id="before-elem">要素追加（直前）</button>
+			<button type="button" id="after-elem">要素追加（直後）</button>
+		</div>
+	</div>
+	<div id="form2">
+		<input type="text" id="text3" value="太郎">
+		<button type="button" class="get-text">テキスト取得</button>
+		<button type="button" class="set-text">テキスト設定</button>
+		<input type="radio" name="radio3" value="ラジオ１">ラジオ１
+		<input type="radio" name="radio3" value="ラジオ２">ラジオ２
+		<input type="radio" name="radio3" value="ラジオ３">ラジオ３
+		<button type="button" class="get-radio">ラジオボタン取得</button>	
+		<button type="button" class="set-radio">ラジオボタン設定</button>
+		<input type="checkbox" name="chk" value="1">
+		<input type="checkbox" name="chk" value="2">
+		<input type="checkbox" name="chk" value="3">
+		<button type="button" class="set-check">チェックボックス設定</button>
+		<button type="button" class="get-check">チェックボックス取得</button>	
+		<!-- input[type=checkbox name=chk value=$]*3 -->
+		<!-- button.set-check[type=button]{チェックボックス設定} -->
+		<!-- button.get-check[type=button]{チェックボックス取得} -->
+	</div>
+	<div id="content">
+		<ul>
+			<li id="taro3"><span>太郎</span></li>
+			<li id="jiro3"><span>次郎</span></li>
+			<li id="hanako3"><span>花子</span></li>
+		</ul>
+		<button id="show-content" type="button">表示</button>
+		<button id="set-content" type="button">設定</button>
+	</div>
+	<div id="position">
+		<div class="box"></div>
+		<button type="button" id="offset">オフセット</button>
+	</div>
+	<div id="size">
+		<div class="box">あ</div>
+		<button type="button" id="width">幅変更</button>
+		<button type="button" id="height">高さ変更</button>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: limegreen;
+				padding: 5px;
+				margin: 5px;
+				border: 1px solid black;
+			}
+		</style>
+	</div>
+	<div id="clz">
+		<ul>
+			<li id="taro2">太郎</li>
+			<li id="jiro2">次郎</li>
+			<li id="hanako2">花子</li>
+		</ul>
+			<style>
+				.man {
+					background-color: blue;
+				}
+				.woman {
+					background-color: pink;
+				}
+			</style>
+			<button id="add-class" type="button">追加</button>
+			<button id="remove-class" type="button">削除</button>
+			<button id="toggle-class" type="button">切り替え</button>
+	</div>
+　<div id="attr2">
+		<a href="http://www.yahoo.co.jp" id="yahoo2" title="やほお">Yahoo</a>
+		<a href="http://wwww.amazon.co.jp" id="amazon2" title="アマゾン">Amazon</a>
+		<button id="remove-attr" type="button">属性削除</button>
+</div>
+	<div id="attr1">
+		<a href="http://www.yahoo.co.jp" id="yahoo">Yahoo</a>
+		<a href="#" id="apple">Apple</a>
+		<button id="get-attr" type="button">属性取得</button>
+		<button id="set-attr" type="button">属性設定</button>	
+	</div>
+	<hr>
+	<div id="form2">
+		<input type="radio" name="radio1" value="ラジオ1">ラジオ１
+		<input type="radio" name="radio1" value="ラジオ2">ラジオ２
+		<input type="radio" name="radio1" value="ラジオ3">ラジオ３
+		<select name="" id="">
+			<option value="オプション１">オプション１</option>
+			<option value="オプション２">オプション２</option>
+			<option value="オプション３">オプション３</option>
+		</select>
+		<button type="button" id="check-value">値チェック</button>	
+	</div>
+	<div id="form">
+		<input type="text">
+		<input type="radio">
+		<input type="checkbox">
+		<input type="image" src="../javascript/bump1.jpeg">
+		<input type="password">
+		<button type="button" id="form-filter">フィルタ</button>
+	</div>
+	<hr>
+	<table id="table" style="border: 1px solid black">
+		<tr>
+			<td>太郎</td>
+			<td></td>
+			<td>三郎</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>マイク</td>
+			<td></td>
+		</tr>
+	</table>
+	<button id="empty" type="button">empty</button>
+	<hr>
+	<ul class="list4">
+		<li><span>山田</span>太郎</li>
+		<li>次郎</li>
+		<li>三郎</li>
+		<li>花子</li>
+	</ul>
+	<button id="contains" type="button">含む</button>
+	<button id="has" type="button">要素を含む</button>
+	<hr>
+	<a href="https://www.yahoo.co.jp">Yahoo</a>
+	<a href="https://www.apple.co.jp">Apple</a>
+	<a href="https://www.amazon.co.jp">Amazon</a>
+	<button type="button" id="not">not apple</button>
+	<hr>
+	<button type="button" id="nth-child">nth-child</button>
+	<button type="button" id="even">even</button>
+	<button type="button" id="odd">odd</button>
+	<button type="button" id="nth-child2">３個おき</button>
+	<button type="button" id="nth-child3">１から３個おき</button>
+	<button type="button" id="alone">孤独</button>	
+	<button type="button" id="evenall">全体で偶数</button>
+	<button type="button" id="oddall">全体で奇数</button>	
+	<button type="button" id="point">３番目基準</button>
+	<ul class="list3">
+		<li>孤独</li>
+	</ul>
+	
+	<ul class="list3">
+		<li>リンゴ</li>
+		<li>いちご</li>
+		<li>みかん</li>
+		<li>マンゴー</li>
+		<li>パイナップル</li>
+		<li>リンゴ</li>
+		<li>いちご</li>
+		<li>みかん</li>
+		<li>マンゴー</li>
+		<li>パイナップル</li>
+	</ul>
+	<ul class="list3">
+		<li>太郎</li>
+		<li>二郎</li>
+		<li>三郎</li>
+	</ul>
+	<ul class="list3">
+		<li>四郎</li>
+		<li>五郎</li>
+		<li>六郎</li>	
+	</ul>
+	<div id="sazaesan">
+		<div id="grand">
+			<p>波平</p>
+			<p>フネ</p>
+			<div id="child">
+				<h2>マスオ</h2>
+				<p>サザエ</p>
+				<div id="grandchild">
+					<p>タラ</p>
+				</div>
+				<p>カツオ</p>
+				<p>ワカメ</p>
+			</div>
+		</div>
+	</div>
+	<div id="cats">
+	  <input type="text" name="cat">
+	  <input type="text" name="cat-5">
+	  <input type="text" name="catman">
+	  <input type="text" name="dog cat horse">
+	  <input type="text" name="dog">
+	  <button type="button" id="find-cat">CSSチェック</button>
+	</div>
+	<input type="text" name="cat">
+	<hr>
+	<a href="#">targetなし</a>
+	<a href="#" target="_blank">ピンク</a>
+	<a href="#" target="_self">赤</a>
+	<a href="#" target="_parent">青</a>
+	<a href="#" target="_top">緑</a>
+	<hr>
+	<p id="universal">*</p>
+	<hr>
+	<ul id="list2">
+		<li class="man taro" id="taro">太郎</li>
+		<li class="man jiro">二郎</li>
+		<li class="woman hanako">花子</li>
+	</ul>
+	<ul>
+		<li class="man" id="taro">太郎</li>
+		<li class="man">二郎</li>
+		<li class="woman">花子</li>
+	</ul>
+	<h2>見出し１</h2>
+	<h2>見出し２</h2>	
+  <hr>
+	<div id="link"></div>
+	<button type="button" id="add-link">リンク追加</button>
+	<hr>
+	<ul id="family">
+		<li>太郎</li>
+		<li>二郎</li>
+	</ul>
+	<button type="button" id="append">追加</button>
+	<button id="color" type="button">色変更</button>
+
+	<button type="button" id="scroll-top">⬆︎TOPへ</button>
+	<script src="jquery-3.1.1.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
